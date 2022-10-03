@@ -6,7 +6,7 @@
 /*   By: adpachec <adpachec@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:56:11 by adpachec          #+#    #+#             */
-/*   Updated: 2022/09/27 16:59:08 by adpachec         ###   ########.fr       */
+/*   Updated: 2022/10/03 09:58:13 by adpachec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 static void	ft_write_nbr(char *s_nbr, long temp, int sz)
 {
-	if (temp == 0)
-	{
-		s_nbr[0] = '0';
-		s_nbr[1] = '\0';
-		return ;
-	}
-	else if (temp < 0)
+	if (temp < 0)
 	{
 		temp *= -1;
 		s_nbr[0] = '-';
@@ -32,7 +26,7 @@ static void	ft_write_nbr(char *s_nbr, long temp, int sz)
 	}
 	else
 	{
-		while (sz > 0)
+		while (sz >= 0)
 		{
 			s_nbr[(sz--) - 1] = temp % 10 + '0';
 			temp /= 10;
@@ -60,8 +54,7 @@ char	*ft_itoa(int n)
 	s_nbr = (char *) malloc(len + 1);
 	if (!s_nbr)
 		return (NULL);
-	temp = n;
-	ft_write_nbr(s_nbr, temp, len);
+	ft_write_nbr(s_nbr, n, len);
 	s_nbr[len] = '\0';
 	return (s_nbr);
 }

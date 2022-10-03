@@ -6,7 +6,7 @@
 /*   By: adpachec <adpachec@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:54:38 by adpachec          #+#    #+#             */
-/*   Updated: 2022/09/27 12:57:54 by adpachec         ###   ########.fr       */
+/*   Updated: 2022/10/03 10:00:32 by adpachec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static size_t	ft_words(const char *s, char c)
 	size_t	i;
 	size_t	words;
 
-	i = 0;
 	words = 0;
 	if (s[0] == '\0')
 		return (0);
+	i = 0;
 	if (s[0] != c)
 	{
 		++words;
